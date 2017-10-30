@@ -1,0 +1,23 @@
+<mat-card class="auth-card">
+<h1>Всички продукти</h1>
+<mat-grid-list cols="5" rowHeight="450px" >
+  <mat-grid-tile *ngFor="let product of products">
+    <mat-card class="example-card">
+    <img mat-card-image src="http://www.care-for-dog.com/Image/dog-worming-kit.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <h4>Worming</h4>
+      <p>
+        Противопаразитна каишка
+      </p>
+      <span class="price-tag">{{product.price}} лв.</span>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button><mat-icon aria-label="Example icon-button with a heart icon">shopping_cart</mat-icon>Поръчай</button>
+      <button mat-button><mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>Любими</button>
+    </mat-card-actions>
+  </mat-card>
+  </mat-grid-tile>
+ 
+</mat-grid-list>
+  
+</mat-card>

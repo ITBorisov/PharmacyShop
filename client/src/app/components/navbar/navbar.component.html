@@ -1,0 +1,39 @@
+<mat-toolbar role="header">
+  <h1>АПТЕКА</h1>
+  <form class="example-form testova">
+    <mat-form-field class="example-full-width">
+      <input type="search" matInput>
+    </mat-form-field>
+  </form>
+ 
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+  
+  <button mat-button [matMenuTriggerFor]="profile"><i class="material-icons">person</i> Моят акаунт<i class="material-icons">arrow_drop_down</i></button>
+  <mat-menu #profile="matMenu">
+      <button mat-menu-item *ngIf="!authService.loggedIn()" routerLink="login">Влез</button>
+      <button mat-menu-item *ngIf="!authService.loggedIn()" routerLink="register">Регистрация</button>
+      <button mat-menu-item *ngIf="authService.loggedIn()" routerLink="profile">Профил</button>
+      <button mat-menu-item *ngIf="authService.loggedIn()" routerLink="admin/product">Админ: Нов Продукт</button>
+      <button mat-menu-item *ngIf="authService.loggedIn()" (click)="logout()">Изход</button>
+  </mat-menu>
+  <button mat-button>
+    <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon> Любими<i class="material-icons">arrow_drop_down</i>
+  </button>
+  <button mat-button routerLink="shopping-cart">
+    <mat-icon aria-label="Example icon-button with a heart icon">shopping_cart</mat-icon> Моята количка<i class="material-icons">arrow_drop_down</i>
+  </button>
+  <mat-toolbar-row class="toolbar-midle">
+  <div class="button-row">
+    <button mat-button [matMenuTriggerFor]="menu"><i class="material-icons">apps</i>Категории</button>
+    <button mat-button routerLink="/products">Продукти</button>
+    <button mat-button>Най-продавани</button>
+  </div>
+  <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+  </mat-menu>
+  </mat-toolbar-row>
+  <!--<mat-toolbar-row class="toolbar-last">
+  </mat-toolbar-row>-->
+</mat-toolbar>

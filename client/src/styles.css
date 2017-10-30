@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body{
+    margin: 0px;
+    background-color: #FAFAFA;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+  padding: 0px 15px;
+}
+
+.auth-card{
+    margin: 20px auto;
+    width: 76%;
+    /*position: relative;
+    bottom: 100px;*/
+}
+
+.auth-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form > * {
+  width: 50%;
+}
+
+.mat-toolbar .mat-toolbar-row{
+  padding: 0px 150px;
+}
+
+.example-card {
+
+}
+
+.example-header-image {
+  background-image: url('http://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.price-tag{
+  color: red;
+}

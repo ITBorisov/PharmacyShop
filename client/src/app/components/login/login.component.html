@@ -1,0 +1,17 @@
+<mat-card class="auth-card">
+  <mat-card-title >Login Form</mat-card-title>
+  <form #loginForm="ngForm" (submit)="loginFormSubmit()" class="auth-form" >
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Username:"  name="username" [(ngModel)]="user.username" #username="ngModel" required>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input type="password" matInput placeholder="Password:" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+    </mat-form-field>
+    
+  <div class="button-row">
+    <button mat-raised-button color="primary">Back</button>
+    <button [disabled]="!loginForm.valid" type="submit" mat-raised-button color="primary">Send</button>
+  </div>
+  </form>
+</mat-card>
